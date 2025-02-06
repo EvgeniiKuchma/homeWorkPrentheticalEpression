@@ -6,11 +6,11 @@ namespace homeWorkPrentheticalEpression
     {
         static void Main(string[] args)
         {
-            string parentheticalesCorrect = "(()(()))";
-             
+            string parentheticalesCorrect = "(((())))";
+
             int depth = 0;
 
-            int maxDepth = 0;   
+            int maxDepth = 0;
 
             char openParenthetical = '(';
             char closeParenthetical = ')';
@@ -29,12 +29,18 @@ namespace homeWorkPrentheticalEpression
 
                 if (depth < 0)
                 {
-                    Console.Write("Exention not correct");
                     break;
                 }
             }
 
-            Console.WriteLine($"Exeption {parentheticalesCorrect} is correct, depth = {maxDepth}");
+            if (depth == 0)
+            {
+                Console.WriteLine($"Exeption {parentheticalesCorrect} is correct, depth = {maxDepth}");
+            }
+            else
+            {
+                Console.Write("Exention not correct");
+            }
         }
     }
 }
